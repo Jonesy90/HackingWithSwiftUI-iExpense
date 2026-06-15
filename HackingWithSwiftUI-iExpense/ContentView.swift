@@ -5,8 +5,15 @@
 //  Created by Michael Jones on 14/06/2026.
 //
 
+/* Challenges
+ 1. Use the user’s preferred currency, rather than always using US dollars.
+ 2. Modify the expense amounts in ContentView to contain some styling depending on their value – expenses under $10 should have one style, expenses under $100 another, and expenses over $100 a third style. What those styles are depend on you.
+ 3. For a bigger challenge, try splitting the expenses list into two sections: one for personal expenses, and one for business expenses. This is tricky for a few reasons, not least because it means being careful about how items are deleted!
+*/
+
 import SwiftUI
 
+/// This stores all the information needed for a single Expense. With built-in support for unique identification and saving/loading.
 struct ExpenseItem: Identifiable, Codable {
     var id = UUID()
     let name: String
@@ -14,6 +21,7 @@ struct ExpenseItem: Identifiable, Codable {
     let amount: Double
 }
 
+/// This class manages the list of expenses, automatically saves the expense list whenever it changes and loads previously saved expenses when the app launches (or whenever a new Expense instance is created). This is an Observable, so any SwiftUI views using it will update automatically when the data changes.
 @Observable
 class Expenses {
     var items = [ExpenseItem]() {
