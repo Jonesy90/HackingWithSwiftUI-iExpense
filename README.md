@@ -3,7 +3,7 @@
 ## Description
 An expense tracker that separates personal and business costs into a list with sections splitting them.
 
-## What I learn't
+## What I Learned
 1. Continued use of extensions. In this project, I used an extension of View to return different font styles depending on the expense cost.
 2. @Observable Classes.
 3. NavigationLink to navigate the user from the main view (ContentView) to a new view (AddView) to allow the user to add new expenses.
