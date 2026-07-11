@@ -5,16 +5,18 @@
 //  Created by Michael Jones on 15/06/2026.
 //
 
+import SwiftData
 import SwiftUI
 
 struct AddView: View {
+    @Environment(\.modelContext) var modelContext
     @Environment(\.dismiss) var dismiss
     
     @State private var name = "Expense Name"
     @State private var type = "Personal"
     @State private var amount = 0.0
     
-    var expenses: Expenses
+    var expenses: [ExpenseItem]
     
     var types = ["Business", "Personal"]
     
@@ -40,7 +42,7 @@ struct AddView: View {
             ToolbarItem(placement: .confirmationAction) {
                 Button("Save") {
                     let newExpenseItem = ExpenseItem(name: name, type: type, amount: amount)
-                    expenses.items.append(newExpenseItem)
+                    modelContext.insert(newExpenseItem)
                     dismiss()
                 }
             }
@@ -55,5 +57,5 @@ struct AddView: View {
 }
 
 #Preview {
-    AddView(expenses: Expenses())
+    AddView(expenses: [ExpenseItem]())
 }

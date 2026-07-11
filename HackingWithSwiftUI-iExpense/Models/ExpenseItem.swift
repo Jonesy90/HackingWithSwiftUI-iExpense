@@ -5,12 +5,20 @@
 //  Created by Michael Jones on 11/07/2026.
 //
 
+import SwiftData
 import Foundation
 
-/// This stores all the information needed for a single Expense. With built-in support for unique identification and saving/loading.
-struct ExpenseItem: Identifiable, Codable, Equatable {
+@Model
+class ExpenseItem {
     var id = UUID()
-    let name: String
-    let type: String
-    let amount: Double
+    var name: String
+    var type: String
+    var amount: Double
+    
+    init(id: UUID = UUID(), name: String, type: String, amount: Double) {
+        self.id = id
+        self.name = name
+        self.type = type
+        self.amount = amount
+    }
 }
