@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct ContentView: View {
-//    @State private var expenses = Expenses()
     @State private var viewModel = ViewModel()
     
     var body: some View {
