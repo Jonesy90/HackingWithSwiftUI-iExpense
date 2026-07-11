@@ -15,5 +15,5 @@ An expense tracker that separates personal and business costs into a list with s
 <img width="300" height="655" alt="Simulator Screenshot - iPhone 17 Pro - 2026-06-23 at 21 26 15" src="https://github.com/user-attachments/assets/2e2c5635-4ff0-4fdb-9957-db6eaf701bc4" />
 
 ## Challenges
-1. Would be cool to introduce SwiftData.
+1. ~Refactir the projects so that it uses SwiftData.~
 2. ~Refactor the layout. A lot of logic code sits in the ContentView. Break it up a bit into individual Swift files and follow the MVVM model.~
